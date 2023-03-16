@@ -1,0 +1,228 @@
+@use 'colors' as *;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+	font-family: 'Handlee';
+	// overflow: hidden;
+}
+
+.slider {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background-color: $bg-color;
+	overflow: hidden;
+
+	&__box {
+		display: flex;
+		width: 400%;
+		height: 100%;
+		padding: 4em 0;
+		transition: transform 1s;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 60%;
+		transform: translateY(-50%);
+		padding: 1em;
+		// height: 300px;
+		// width: 40px;
+		border-radius: 50%;
+		background: none;
+		border: none;
+		cursor: pointer;
+		background-color: rgba(0, 0, 0, 0.1);
+		font-size: 2rem;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.3);
+		}
+	}
+
+	&__btn-left {
+		left: 0;
+		margin-left: 1.5em;
+	}
+
+	&__btn-right {
+		right: 0;
+		margin-right: 1.5em;
+	}
+}
+
+.section {
+	width: 100%;
+	height: 100%;
+	margin: 0 4em;
+	border-radius: 32px;
+	box-shadow: 5px 5px 10px 5px;
+	background-color: $section-color;
+	overflow: auto;
+}
+
+::-webkit-scrollbar {
+	// width: 20px;
+	position: absolute;
+	right: 10px;
+	height: 200px;
+	border-radius: 8px;
+	background: red;
+}
+
+::-webkit-scrollbar-thumb{
+	border-radius: 16px;
+	background: green;
+}
+
+
+.title {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 3rem;
+	margin: 1em 0;
+}
+
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	overflow: hidden;
+
+	&__title {
+		text-align: center;
+		margin: 0 1em;
+		margin-top: 5em;
+		text-transform: uppercase;
+		font-size: 3rem;
+		background-color: rgba(0, 0, 0, 0.3);
+		padding: 1em;
+		border-radius: 25%;
+	}
+
+	&__decorative{
+		position: relative;
+		left: 10px;
+		display: inline-block;
+		transform-origin: left;
+		transform: rotateZ(20deg);
+	}
+
+	&::before{
+		position: absolute;
+		top:70px;
+		right: -80px;
+		transform: rotateZ(45deg);
+		background-color: rgb(131, 24, 24);
+		width: 350px;
+		height: 60px;
+		content: '';
+	}
+}
+
+.aboutme {
+	&__portrait {
+		width: 80%;
+		border-radius: 25%;
+		box-shadow: 5px 5px 10px;
+	}
+
+	&__text {
+		margin: 4em 4em;
+		padding: 0.5em 0;
+		border-radius: 32px;
+		box-shadow: 0 0 20px 5px;
+		background-color: rgba(0, 0, 0, 0.4);
+		text-align: center;
+	}
+
+	&__describe {
+		margin: 2em;
+		font-size: 1.5rem;
+	}
+}
+
+.mywork {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	&__decorative{
+		position: relative;
+		top: 30px;
+
+		display: inline-block;
+		transform-origin: right;
+		transform: rotate(13deg);
+	}
+
+	&__accordion{
+		width: 80%;
+		border-radius: 8px;
+		background: none;
+	}
+
+	&__accordion-box{
+		// margin: 2em;
+		transition: height 1s;
+		// background: none;
+	}
+
+	&__btn{
+		width: 100%;
+		padding: 1em;
+		margin: 0.2em 0;
+		border-radius: 8px;
+		border: none;
+		background: none;
+		background-color: rgba(0, 0, 0, 0.1);
+		font-size: 1rem;
+		transition: background-color .3s;
+		cursor: pointer;
+
+		&:hover{
+			background-color: rgba(0, 0, 0, 0.6);
+		}
+	}
+
+	&__info{
+		// display: none;
+		height: 0;
+		// background-color: rgba(0, 0, 0, 0.3);
+		// padding: 1em 2em;
+		background-color: rgba(0, 0, 0, 0.3);
+		transition: height 1s;
+		overflow: hidden;
+	}
+
+	&__info-text{
+		padding: 1em;
+		// background: none;
+		font-size: 1rem;
+	}
+}
+
+.active{
+	// display: block;
+	height: 100px;
+
+}
+
+.contact {
+}
