@@ -1,4 +1,5 @@
 @use 'colors' as *;
+@use 'mediaQueries' as *;
 
 *,
 *::before,
@@ -36,18 +37,18 @@ body {
 
 	&__btn {
 		position: absolute;
-		top: 60%;
+		top: 50%;
 		transform: translateY(-50%);
-		padding: 1em;
-		// height: 300px;
-		// width: 40px;
-		border-radius: 50%;
+		height: 100vh;
+		width: 1.2em;
 		background: none;
 		border: none;
 		cursor: pointer;
-		background-color: rgba(0, 0, 0, 0.1);
-		font-size: 2rem;
+		background-color: rgba(0, 0, 0, 0.6);
+		color: #999;
+		font-size: 2.5rem;
 		transition: background-color 0.3s;
+
 
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.3);
@@ -56,44 +57,50 @@ body {
 
 	&__btn-left {
 		left: 0;
-		margin-left: 1.5em;
 	}
 
 	&__btn-right {
 		right: 0;
-		margin-right: 1.5em;
 	}
 }
 
 .section {
 	width: 100%;
 	height: 100%;
-	margin: 0 4em;
+	margin: 0 5em;
 	border-radius: 32px;
 	box-shadow: 5px 5px 10px 5px;
 	background-color: $section-color;
 	overflow: auto;
 }
 
-::-webkit-scrollbar {
-	// width: 20px;
-	position: absolute;
-	right: 10px;
-	height: 200px;
-	border-radius: 8px;
-	background: red;
-}
+// .aboutme::-webkit-scrollbar-thumb{
+// 	max-height: 10px;
+// 	border-radius: 16px;
+// 	background: rgb(114, 32, 32, .2);
+// 	box-shadow: 0 0 5px;
+// }
 
-::-webkit-scrollbar-thumb{
-	border-radius: 16px;
-	background: green;
-}
+// .aboutme::-webkit-scrollbar {
+// 	height: 10px;
+// 	border-radius: 8px;
+// 	background: rgba(0,0,0,.2);
+// }
+
+// .aboutme::-webkit-scrollbar-track{
+// 	margin: 1em;
+// }
+
+// .aboutme::-webkit-scrollbar-button{
+// 	height: 100px;
+// 	background: blue;
+// }
 
 
 .title {
 	text-transform: uppercase;
 	text-align: center;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	margin: 1em 0;
 }
 
@@ -109,7 +116,7 @@ body {
 		margin: 0 1em;
 		margin-top: 5em;
 		text-transform: uppercase;
-		font-size: 3rem;
+		font-size: 2rem;
 		background-color: rgba(0, 0, 0, 0.3);
 		padding: 1em;
 		border-radius: 25%;
@@ -125,10 +132,11 @@ body {
 
 	&::before{
 		position: absolute;
-		top:70px;
+		top:10px;
 		right: -80px;
 		transform: rotateZ(45deg);
 		background-color: rgb(131, 24, 24);
+		box-shadow: 0 0 5px 5px;
 		width: 350px;
 		height: 60px;
 		content: '';
@@ -137,7 +145,10 @@ body {
 
 .aboutme {
 	&__portrait {
-		width: 80%;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 85%;
 		border-radius: 25%;
 		box-shadow: 5px 5px 10px;
 	}
@@ -153,7 +164,7 @@ body {
 
 	&__describe {
 		margin: 2em;
-		font-size: 1.5rem;
+		font-size: 1rem;
 	}
 }
 
@@ -201,11 +212,20 @@ body {
 		}
 	}
 
+	&__img{
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 100%;
+	}
+
 	&__info{
 		// display: none;
 		height: 0;
 		// background-color: rgba(0, 0, 0, 0.3);
 		// padding: 1em 2em;
+		text-align: center;
+		border-radius: 8px;
 		background-color: rgba(0, 0, 0, 0.3);
 		transition: height 1s;
 		overflow: hidden;
@@ -216,13 +236,32 @@ body {
 		// background: none;
 		font-size: 1rem;
 	}
+
+	&__link{
+		text-decoration: none;
+		color: black;
+		padding: 5px;
+		border-radius: 8px;
+		transition: color .3s, background-color .3s;
+
+		&:hover{
+			background-color: black;
+			color: white;
+		}
+	}
 }
 
 .active{
 	// display: block;
-	height: 100px;
+	height: 310px;
 
 }
 
-.contact {
+// .contact {
+// }
+
+// media queries
+
+@media(min-width: 992px){
+	@include large;
 }
