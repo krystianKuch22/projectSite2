@@ -1,5 +1,134 @@
-@mixin large{
-    .title{
-        font-size: 6rem;
-    }
+@mixin medium {
+	.header {
+		&__title {
+			font-size: 3.5rem;
+		}
+
+		.deco-gear {
+			font-size: 10rem;
+		}
+
+		&::before {
+			top: 100px;
+			right: -140px;
+			width: 500px;
+			height: 80px;
+		}
+	}
+
+	.title {
+		font-size: 4rem;
+	}
+
+	.active {
+		height: 750px;
+	}
+
+	.aboutme {
+		&__describe {
+			font-size: 1.5rem;
+		}
+	}
+
+	.mywork {
+		&__btn {
+			font-size: 2rem;
+		}
+
+		&__info-text {
+			font-size: 2rem;
+		}
+
+		&__link {
+			padding: 0.8em;
+			font-size: 1.5rem;
+		}
+
+		&__deco-line {
+			margin-top: 4em;
+		}
+
+		&__gear {
+			top: 15%;
+			right: -45%;
+			font-size: 10rem;
+		}
+	}
+
+	.contact {
+		&__label {
+			font-size: 2rem;
+		}
+
+		&__input {
+			font-size: 2rem;
+		}
+
+		&__btn {
+			font-size: 2rem;
+		}
+	}
+}
+
+@mixin large {
+	.deco-gear {
+		top: 75%;
+		right: -2%;
+	}
+
+	.aboutme {
+		&__portrait {
+			width: 40%;
+		}
+	}
+
+	::-webkit-scrollbar {
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 32px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: rgba(97, 6, 6, 0.4);
+		border-radius: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		margin: 20px;
+		border-radius: 8px;
+	}
+
+	.mywork {
+		&__info {
+            display: flex;
+            flex-direction: column;
+
+		}
+
+        &__btn{
+            position: relative;
+        }
+
+		&__img {
+			// position: relative;
+			// left: 50%;
+			// left: 50%;
+			// transform: translateX(-50%);
+			width: 40%;
+			margin-top: 2em;
+			border-radius: 8px;
+			box-shadow: 0 0 5px;
+		}
+
+		// &__gear{
+		//     position: relative;
+		//     top: 0;
+		//     right: 0;
+		// }
+	}
+
+	.contact {
+		&__form {
+			padding-bottom: 4em;
+		}
+	}
 }
