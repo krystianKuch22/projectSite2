@@ -30,6 +30,21 @@
 		}
 	}
 
+	::-webkit-scrollbar {
+		background: rgba(0, 0, 0, 0.3);
+		border-radius: 32px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: rgba(97, 6, 6, 0.4);
+		border-radius: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		margin: 20px;
+		border-radius: 8px;
+	}
+
 	.mywork {
 		&__btn {
 			font-size: 2rem;
@@ -78,24 +93,10 @@
 
 	.aboutme {
 		&__portrait {
-			width: 40%;
+			width: 45%;
 		}
 	}
 
-	::-webkit-scrollbar {
-		background: rgba(0, 0, 0, 0.3);
-		border-radius: 32px;
-	}
-
-	::-webkit-scrollbar-thumb {
-		background: rgba(97, 6, 6, 0.4);
-		border-radius: 8px;
-	}
-
-	::-webkit-scrollbar-track {
-		margin: 20px;
-		border-radius: 8px;
-	}
 
 	.mywork {
 		&__info {
